@@ -1,0 +1,17 @@
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.csproj.AssemblyReference.cache
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.GeneratedMSBuildEditorConfig.editorconfig
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.AssemblyInfoInputs.cache
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.AssemblyInfo.cs
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.csproj.CoreCompileInputs.cache
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/CatSole
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/CatSole.deps.json
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/CatSole.runtimeconfig.json
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/CatSole.dll
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/CatSole.pdb
+/Users/staff/Desktop/CODE/CatSole/bin/Debug/net6.0/Spectre.Console.dll
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.csproj.CopyComplete
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.dll
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/refint/CatSole.dll
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.pdb
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/CatSole.genruntimeconfig.cache
+/Users/staff/Desktop/CODE/CatSole/obj/Debug/net6.0/ref/CatSole.dll

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3QMgG9uvo3tQm32eWssv3pyWKsU/6x699ARSjUCfUL2hYTQdH4D5ytIuBjzxRBUNgllcMVP1K6bwSC8vH1HYjw==",
+  "success": true,
+  "projectFilePath": "/Users/staff/Desktop/CODE/CatSole/CatSole.csproj",
+  "expectedPackageFiles": [
+    "/Users/staff/.nuget/packages/spectre.console/0.45.0/spectre.console.0.45.0.nupkg.sha512",
+    "/Users/staff/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512"
+  ],
+  "logs": []
+}
