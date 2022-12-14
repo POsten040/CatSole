@@ -1,6 +1,4 @@
-﻿using System;
-using CatSole.Helpers;
-using Spectre.Console;
+﻿using CatSole.Helpers;
 
 public static class Program
 {
@@ -54,9 +52,9 @@ public static class Program
       "JK this is the final message, good luck, godspeed, I love you",
       "On this day of all days!?",
       new string[]{"Leeeeeeeeeroy", "jeeeeeenkins"},
-      "Red pill Blue pill MF",
-      new string[]{"red sauce", "white sauce"},
-      laughed
+      "Rate my drawing again",
+      new string[]{"100 yeets", "100 beets"},
+      artAppreciator
     )
   };
   public static List<ConsoleKeyInfo> KeyLog = new List<ConsoleKeyInfo> {};
@@ -73,9 +71,9 @@ public static class Program
     LogKey(key);
     if(KeyGood(key.KeyChar))
     {
-      AH.Write(currentPrompt.Shouts[0], "greenyellow");
-      AH.Write("", "greenyellow");
-      AH.Write(currentPrompt.Shouts[1], "greenyellow");
+      AH.Write(currentPrompt.Shouts[0], "aqua");
+      AH.Write("", "aqua");
+      AH.Write(currentPrompt.Shouts[1], "aqua");
       AH.Draw();
       string response = AH.GiveOptions(currentPrompt.Question, "green", "blue", currentPrompt.Choices);
       if(response == currentPrompt.Choices[0]) stats[currentPrompt.PointTarget]++;
