@@ -71,5 +71,28 @@ namespace CatSole.Helpers
             .AddChoices(choices));
       return choice;
     }
+    public static void MakeBar(Dictionary<string, int> keys)
+    {
+      BreakdownChart bd = new BreakdownChart().Width(60);
+      int index = 0;
+      foreach(KeyValuePair<string, int> kv in keys)
+      {
+        bd.AddItem(kv.Key, kv.Value, colorList[index]);
+        index++;
+      }
+      AnsiConsole.Write(bd);
+    }
+    public static string Ask(string message, string word = "thing")
+    {
+      var result = AnsiConsole.Ask<string>($"[white]{message}[/] [green]{word}[/]?");
+      return result;
+    }
+    public static void Figlet(string message)
+    {
+    AnsiConsole.Write(
+      new FigletText($"{message}")
+      .LeftAligned()
+      .Color(Color.Green));
+    }
   }
 }

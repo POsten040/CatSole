@@ -3,60 +3,13 @@
 public static class Program
 {
   private static int iteration = -1;
-  private static string rightThing = "did the right thing";
-  private static string wrongThing = "did the wrong thing";
-  private static string laughed = "laughed";
-  public static string artAppreciator = "art appreciator";
-  public static Dictionary<string, int> stats = new Dictionary<string, int>()
-    {
-      {rightThing,0},
-      {wrongThing,0},
-      {laughed,0},
-      {artAppreciator,0}
-    };
-  private static List<Prompt> prompts = new List<Prompt>
-  {
-    new Prompt(
-      "Welcome to the game, please press one of the num keys.",
-      "Yeah but not that one",
-      new string[]{"Eyyyy", "Oohhh"},
-      "what do you think of that? I just did that.",
-      new string[]{"it's art", "it's a fart"},
-      artAppreciator
-    ),
-    new Prompt(
-      "Trying again huh? you remember what to do?",
-      "Nah nah nahnahnah",
-      new string[]{"whoa!", "noice"},
-      "What's the best smell?",
-      new string[]{"honey", "suckle"},
-      wrongThing
-    ),
-    new Prompt(
-      "Hey friend, you may want to see a doctor",
-      "A load of bog standard plonk",
-      new string[]{"commit", "drive"},
-      "Do you want to know a secret?",
-      new string[]{"not really", "nope"},
-      rightThing
-    ),
-    new Prompt(
-      "LAST CALL DAWG",
-      "slipping in the end zone ey?",
-      new string[]{"Something", "something"},
-      "Hey kid, stop all the downloading!",
-      new string[]{"Sir, this is a Wendy's", "I'm a cat"},
-      laughed
-    ),
-    new Prompt(
-      "JK this is the final message, good luck, godspeed, I love you",
-      "On this day of all days!?",
-      new string[]{"Leeeeeeeeeroy", "jeeeeeenkins"},
-      "Rate my drawing again",
-      new string[]{"100 yeets", "100 beets"},
-      artAppreciator
-    )
-  };
+  private static string defaultColor = "aqua";
+  private static string accent = "white";
+  private static string sus = "fuchsia";
+  private static string warn = "red";
+  private static string tableColor1 = "indianred";
+  private static string tableColor2 = "darkslategray1";
+  private static Stats userStats = new Stats();
   public static Dictionary<string, int> KeyLog = new Dictionary<string, int> {};
   private static List<char> _acceptableKeys = new List<char>
   {
@@ -64,27 +17,37 @@ public static class Program
   };
   public static void Main()
   {
-    Iterate();
-    Prompt currentPrompt = prompts[iteration];
+    if(iteration == -1)
+    {
+      string userName = AH.Ask("Tell me your", "name");
+      userStats.Name = userName;
+      AH.Write($"Nice to meet you {userStats.Name}", defaultColor);
+    }
+    Iterate(Prompt.prompts.Count);
+    if(iteration >= Prompt.prompts.Count) WriteStats(userStats);
+    Prompt currentPrompt = Prompt.prompts[iteration];
     Greeting(currentPrompt.Welcome);
     ConsoleKeyInfo key = Console.ReadKey();
     LogKey(key);
     if(KeyGood(key.KeyChar))
     {
-      AH.Write(currentPrompt.Shouts[0], "aqua");
-      AH.Write("", "aqua");
-      AH.Write(currentPrompt.Shouts[1], "aqua");
+      userStats.AddStat(Stats.rightThing);
+      AH.Write(currentPrompt.Shouts[0], defaultColor);
+      AH.Write("", defaultColor);
+      AH.Write(currentPrompt.Shouts[1], defaultColor);
       AH.Draw();
-      string response = AH.GiveOptions(currentPrompt.Question, "green", "blue", currentPrompt.Choices);
-      if(response == currentPrompt.Choices[0]) stats[currentPrompt.PointTarget]++;
-      Reset();
+      string response = AH.GiveOptions(currentPrompt.Question, tableColor1, tableColor2, currentPrompt.Choices);
+      if(response == currentPrompt.Choices[0]) userStats.AddStat(currentPrompt.PointTarget);
+      Reset(userStats, Prompt.prompts.Count);
     }
     else
     {
-      AH.Write("Yeah but not that one", "darkgoldenrod");
-      Reset();
+      userStats.AddStat(Stats.wrongThing);
+      AH.Write("Yeah but not that one", sus);
+      Reset(userStats, Prompt.prompts.Count);
     }
   }
+//-----------------Methods-----------------\
   private static bool KeyGood(char keyChar)
   {
     foreach(char character in _acceptableKeys)
@@ -99,50 +62,52 @@ public static class Program
     if(KeyLog.ContainsKey(keyChar)) KeyLog[keyChar]++;
     if(!KeyLog.ContainsKey(keyChar)) KeyLog[keyChar] = 1;
   }
-  private static void AddStat(string action)
+
+  public static void Iterate(int count)
   {
-    stats[action]++;
-  }
-  public static void Iterate()
-  {
-    if(iteration>=4)
-    {
-      iteration = 4;
-    }
-    else
-    {
-      iteration++;
-    }
+    if(iteration>=count) iteration = count;
+    else iteration++;
   }
   private static void Greeting(string message)
   {
-    if(iteration >= 4) AH.Write(":skull_and_crossbones:", "white");
-    if(iteration == 3) AH.MakeTable("bruh", "...");
-    if(iteration == 2) AH.MakeTable("hello", "it's you");
-    if(iteration == 1) AH.MakeTable("Hello", "...again");
-    if(iteration == 0) AH.MakeTable("Hello", "world");
-    AH.Write(message, "aqua");
+    if(iteration >= 6) AH.Write(":skull_and_crossbones:", accent);
+    if(iteration >= 4) AH.MakeTable("bruh", "...");
+    if(iteration >= 2) AH.MakeTable("Hello", "...again");
+    if(iteration >= 0) AH.MakeTable("Hello", "world");
+    AH.Write(message, defaultColor);
   }
-  private static void Reset()
+  private static void Reset(Stats user, int count)
   {
-    if(iteration >= 4) 
+    
+    if(iteration >= count) 
     {
-      WriteStats();
+      WriteStats(user);
+    }
+    string morale = "";
+    if(iteration%3==0)
+    {
+      AH.Write("Hey you've been working hard", defaultColor, " hard", accent);
+      morale = AH.GiveOptions("Quit?", "yellow", sus, new string[]{"Okay", "Eat my shorts"});
+    }
+    if(morale == "Okay") 
+    {
+      AH.Write("BYEEE", defaultColor);
+      WriteStats(user);
     }
     Main();
   }
-  private static void WriteStats()
+  private static void WriteStats(Stats user)
   {
-    AH.Write("this is the end, here lay your stats", "white");
-    foreach(KeyValuePair<string, int> k in stats)
+    AH.Write($"this is the end {user.Name}, here lay your stats", defaultColor);
+    foreach(KeyValuePair<string, int> k in user.stats)
     {
       AH.MakeTable(k.Key, k.Value.ToString());
     }
-    AH.Write("You pressed these keys", "white");
+    AH.Write("You pressed these keys", defaultColor);
     AH.MakeBar(KeyLog);
-    AH.Write("press f to say goodbye", "aqua");
+    AH.Write("press f to say goodbye", defaultColor);
     ConsoleKeyInfo key = Console.ReadKey();
+    
     Environment.Exit(0);
-
   }
 }
