@@ -32,9 +32,8 @@ public static class Program
     if(KeyGood(key.KeyChar))
     {
       userStats.AddStat(Stats.rightThing);
-      AH.Write(currentPrompt.Shouts[0], defaultColor);
-      AH.Write("", defaultColor);
-      AH.Write(currentPrompt.Shouts[1], defaultColor);
+      if(iteration%2==0) AH.Figlet(currentPrompt.Shouts[0]);
+      else  AH.Figlet(currentPrompt.Shouts[1]);
       AH.Draw();
       string response = AH.GiveOptions(currentPrompt.Question, tableColor1, tableColor2, currentPrompt.Choices);
       if(response == currentPrompt.Choices[0]) userStats.AddStat(currentPrompt.PointTarget);
@@ -43,7 +42,7 @@ public static class Program
     else
     {
       userStats.AddStat(Stats.wrongThing);
-      AH.Write("Yeah but not that one", sus);
+      AH.Write(currentPrompt.BadResponse, sus);
       Reset(userStats, Prompt.prompts.Count);
     }
   }
@@ -71,9 +70,9 @@ public static class Program
   private static void Greeting(string message)
   {
     if(iteration >= 6) AH.Write(":skull_and_crossbones:", accent);
-    if(iteration >= 4) AH.MakeTable("bruh", "...");
-    if(iteration >= 2) AH.MakeTable("Hello", "...again");
-    if(iteration >= 0) AH.MakeTable("Hello", "world");
+    if(iteration == 4) AH.MakeTable("bruh", "...");
+    if(iteration == 2) AH.MakeTable("Hello", "...again");
+    if(iteration == 0) AH.MakeTable("Hello", "world");
     AH.Write(message, defaultColor);
   }
   private static void Reset(Stats user, int count)
@@ -107,7 +106,7 @@ public static class Program
     AH.MakeBar(KeyLog);
     AH.Write("press f to say goodbye", defaultColor);
     ConsoleKeyInfo key = Console.ReadKey();
-    
+    AH.Figlet($"Bye {user.Name}");
     Environment.Exit(0);
   }
 }
