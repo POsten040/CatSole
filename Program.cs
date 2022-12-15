@@ -57,10 +57,10 @@ public static class Program
       artAppreciator
     )
   };
-  public static List<ConsoleKeyInfo> KeyLog = new List<ConsoleKeyInfo> {};
+  public static Dictionary<string, int> KeyLog = new Dictionary<string, int> {};
   private static List<char> _acceptableKeys = new List<char>
   {
-    '1','2','3','4','5','6','7','8','9'
+    'n','u','m','b','e','r'
   };
   public static void Main()
   {
@@ -95,7 +95,9 @@ public static class Program
   }
   private static void LogKey(ConsoleKeyInfo key)
   {
-    KeyLog.Add(key);
+    string keyChar = key.KeyChar.ToString();
+    if(KeyLog.ContainsKey(keyChar)) KeyLog[keyChar]++;
+    if(!KeyLog.ContainsKey(keyChar)) KeyLog[keyChar] = 1;
   }
   private static void AddStat(string action)
   {
@@ -125,20 +127,22 @@ public static class Program
   {
     if(iteration >= 4) 
     {
-      AH.Write("this is the end, here lay your stats", "white");
-      foreach(KeyValuePair<string, int> k in stats)
-      {
-        AH.MakeTable(k.Key, k.Value.ToString());
-      }
-      AH.Write("You pressed these keys", "white");
-      foreach(ConsoleKeyInfo c in KeyLog)
-      {
-        AH.Write(c.KeyChar.ToString(), "green");
-      }
-      AH.Write("press f to say goodbye", "aqua");
-      ConsoleKeyInfo key = Console.ReadKey();
-      Environment.Exit(0);
+      WriteStats();
     }
     Main();
+  }
+  private static void WriteStats()
+  {
+    AH.Write("this is the end, here lay your stats", "white");
+    foreach(KeyValuePair<string, int> k in stats)
+    {
+      AH.MakeTable(k.Key, k.Value.ToString());
+    }
+    AH.Write("You pressed these keys", "white");
+    AH.MakeBar(KeyLog);
+    AH.Write("press f to say goodbye", "aqua");
+    ConsoleKeyInfo key = Console.ReadKey();
+    Environment.Exit(0);
+
   }
 }
