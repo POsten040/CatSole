@@ -8,14 +8,10 @@
           "System.Memory": "4.5.5"
         },
         "compile": {
-          "lib/net6.0/Spectre.Console.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Spectre.Console.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Spectre.Console.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Spectre.Console.dll": {}
         }
       },
       "System.Memory/4.5.5": {
@@ -76,19 +72,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/staff/.nuget/packages/": {}
+    "C:\\Users\\patri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/staff/Desktop/CODE/CatSole/CatSole.csproj",
+      "projectUniqueName": "C:\\Users\\patri\\Desktop\\__CODE__\\JS-practice\\CatSole\\CatSole.csproj",
       "projectName": "CatSole",
-      "projectPath": "/Users/staff/Desktop/CODE/CatSole/CatSole.csproj",
-      "packagesPath": "/Users/staff/.nuget/packages/",
-      "outputPath": "/Users/staff/Desktop/CODE/CatSole/obj/",
+      "projectPath": "C:\\Users\\patri\\Desktop\\__CODE__\\JS-practice\\CatSole\\CatSole.csproj",
+      "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\patri\\Desktop\\__CODE__\\JS-practice\\CatSole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/staff/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -123,8 +119,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -133,7 +128,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,5 @@
 using Spectre.Console;
 
-
 namespace CatSole.Helpers
 {
   public class AH
@@ -66,6 +65,14 @@ namespace CatSole.Helpers
         c.SetPixel(randy.Next(c.Width), randy.Next(c.Height), colorList[randy.Next(colorList.Count)]);
       }
       AnsiConsole.Write(c);
+    }
+    public static void Spin()
+    {
+    AnsiConsole.Status()
+      .Spinner(Spinner.Known.Star)
+      .Start("Hang on a sec...", ctx => {
+          Console.WriteLine(ctx);
+      });
     }
     public static string GiveOptions(string title, string color1, string color2, string[] choices)
     {

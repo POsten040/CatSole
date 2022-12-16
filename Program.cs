@@ -83,15 +83,16 @@ public static class Program
       WriteStats(user);
     }
     string morale = "";
-    if(iteration%3==0)
+    if((iteration%2==0) && (iteration>3))
     {
       AH.Write("Hey you've been working hard", defaultColor, " hard", accent);
-      morale = AH.GiveOptions("Quit?", "yellow", sus, new string[]{"Okay", "Eat my shorts"});
+      morale = AH.GiveOptions("Quit?", "yellow", warn, new string[]{"Eat my shorts", "Okay"});
     }
-    if(morale == "Okay") 
+    if(morale == "Okay")
     {
+      user.AddStat(Stats.quitter);
       WriteStats(user);
-    }
+    } 
     Main();
   }
   private static void WriteStats(Stats user)
@@ -99,8 +100,11 @@ public static class Program
     AH.Write($"this is the end {user.Name}, here lay your stats", defaultColor);
     foreach(KeyValuePair<string, int> k in user.stats)
     {
-      AH.MakeTable(k.Key, k.Value.ToString());
+      if(k.Key == Stats.quitter && k.Value == 0) AH.MakeTable(k.Key, "nope");
+      else if(k.Key == Stats.quitter && k.Value == 1) AH.MakeTable(k.Key, "big time");
+      else AH.MakeTable(k.Key, k.Value.ToString());
     }
+    //spinner
     AH.Write("You pressed these keys", defaultColor);
     AH.MakeBar(KeyLog);
     AH.Write("press f to say goodbye", defaultColor);

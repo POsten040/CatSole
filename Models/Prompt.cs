@@ -35,15 +35,15 @@ namespace CatSole.Helpers
         "laughed"
       ),
       new Prompt(
-        "I'm really worried about you",
+        "I'm really worried about you SUBJECT-6394NF9W-02",
         "You had one job...",
-        new string[]{"Shout", "Shout"},
+        new string[]{":0", "D:"},
         "Check this drawing out, I mean being cool is a waste of time right?!",
         new string[]{"Ice cold!", "Alright alright alright alright alright"},
         "laughed"
       ),
       new Prompt(
-        "Just kidding I think you're funny",
+        "Lets get crazy and, press one of the number keys",
         "slipping in the end zone ey?",
         new string[]{"B===>~~", "80085"},
         "Hey kid, stop all the downloading!",
@@ -51,7 +51,7 @@ namespace CatSole.Helpers
         "laughed"
       ),
       new Prompt(
-        "Final Transmission: good luck, godspeed, I love you",
+        "Welp. ¯|_(ツ)_/¯ good luck, godspeed, I love you",
         "On this day of all days!?",
         new string[]{"Leeeeeeeeeroy", "jeeeeeenkins"},
         "Rate my drawing again",

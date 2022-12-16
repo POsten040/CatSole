@@ -7,12 +7,14 @@ public class Stats
   public static string wrongThing = "did the wrong thing";
   public static string laughed = "laughed";
   public static string artAppreciator = "art appreciator";
+  public static string  quitter = "quitter";
   public Dictionary<string, int> stats = new Dictionary<string, int>()
     {
       {rightThing,0},
       {wrongThing,0},
       {laughed,0},
-      {artAppreciator,0}
+      {artAppreciator,0},
+      {quitter,0}
     };
   public Stats(string userName = "DEFAULT MEATBAG")
   {

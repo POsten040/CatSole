@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3QMgG9uvo3tQm32eWssv3pyWKsU/6x699ARSjUCfUL2hYTQdH4D5ytIuBjzxRBUNgllcMVP1K6bwSC8vH1HYjw==",
+  "dgSpecHash": "wfaBUC3IqOlPYKpu32r40V0FSDbEnpkUYYaUDvXlcJ4sIMAhGMEIzbposnX2QMqWt9+uWNnPTpdN8vTsrj1Y6Q==",
   "success": true,
-  "projectFilePath": "/Users/staff/Desktop/CODE/CatSole/CatSole.csproj",
+  "projectFilePath": "C:\\Users\\patri\\Desktop\\__CODE__\\JS-practice\\CatSole\\CatSole.csproj",
   "expectedPackageFiles": [
-    "/Users/staff/.nuget/packages/spectre.console/0.45.0/spectre.console.0.45.0.nupkg.sha512",
-    "/Users/staff/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512"
+    "C:\\Users\\patri\\.nuget\\packages\\spectre.console\\0.45.0\\spectre.console.0.45.0.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
   ],
   "logs": []
 }
