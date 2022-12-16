@@ -5,7 +5,7 @@ namespace CatSole.Helpers
 {
   public class AH
   {
-    private static Canvas c = new Canvas(3, 3); 
+    private static Canvas c = new Canvas(32, 8); 
     private static Random randy = new Random();
     private static List<Color> colorList = new List<Color> 
     {
@@ -55,6 +55,12 @@ namespace CatSole.Helpers
     }
     public static void Draw()
     {
+      // double step = (2*Math.PI)/20;
+      // int edge = c.Width;
+      // for(int i=0; i<2*Math.PI; i++)
+      // {
+      //   c.SetPixel(randy.Next(c.Width), randy.Next(c.Height), colorList[randy.Next(colorList.Count)]);
+      // }
       for(int i=0; i<c.Width && i<c.Height; i++)
       {
         c.SetPixel(randy.Next(c.Width), randy.Next(c.Height), colorList[randy.Next(colorList.Count)]);
@@ -89,10 +95,10 @@ namespace CatSole.Helpers
     }
     public static void Figlet(string message)
     {
-    AnsiConsole.Write(
-      new FigletText($"{message}")
-      .LeftAligned()
-      .Color(Color.Green));
+      AnsiConsole.Write(
+        new FigletText($"{message}")
+        .LeftAligned()
+        .Color(Color.Green));
     }
   }
 }

@@ -90,7 +90,6 @@ public static class Program
     }
     if(morale == "Okay") 
     {
-      AH.Write("BYEEE", defaultColor);
       WriteStats(user);
     }
     Main();

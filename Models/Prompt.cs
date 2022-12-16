@@ -11,7 +11,7 @@ namespace CatSole.Helpers
     public static List<Prompt> prompts = new List<Prompt>
     {
       new Prompt(
-        "Welcome to the game, please press one of the num keys.",
+        "Welcome to the game, please press one of the number keys.",
         "Yeah but not that one",
         new string[]{"Eyyyy", "Oohhh"},
         "what do you think of that? I just did that.",
@@ -27,31 +27,31 @@ namespace CatSole.Helpers
         "art appreciator"
       ),
       new Prompt(
-        "Hey friend, you may want to see a doctor",
-        "A load of bog standard plonk",
-        new string[]{"commit", "drive"},
+        "Hey friend, you may want to see a doctor. But first PRESS THE NUMBER KEYS",
+        "Fat fingers no singers",
+        new string[]{"Finger", "Singer"},
         "Do you want to know a secret?",
         new string[]{"not really", "nope"},
         "laughed"
       ),
       new Prompt(
-        "I'mreally worried about you",
+        "I'm really worried about you",
         "You had one job...",
         new string[]{"Shout", "Shout"},
-        "Being cool is a waste of time right?!",
+        "Check this drawing out, I mean being cool is a waste of time right?!",
         new string[]{"Ice cold!", "Alright alright alright alright alright"},
         "laughed"
       ),
       new Prompt(
-        "LAST CALL DAWG",
+        "Just kidding I think you're funny",
         "slipping in the end zone ey?",
-        new string[]{"Something", "something"},
+        new string[]{"B===>~~", "80085"},
         "Hey kid, stop all the downloading!",
         new string[]{"Sir, this is a Wendy's", "I'm a cat"},
         "laughed"
       ),
       new Prompt(
-        "JK this is the final message, good luck, godspeed, I love you",
+        "Final Transmission: good luck, godspeed, I love you",
         "On this day of all days!?",
         new string[]{"Leeeeeeeeeroy", "jeeeeeenkins"},
         "Rate my drawing again",
